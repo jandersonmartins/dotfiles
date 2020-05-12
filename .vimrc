@@ -4,29 +4,44 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'wakatime/vim-wakatime'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'preservim/nerdtree'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'wakatime/vim-wakatime'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'preservim/nerdtree'
 " Syntax highlight
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'styled-components/vim-styled-components'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'jparise/vim-graphql'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'leafgarland/typescript-vim'
+Plug 'jparise/vim-graphql'
 " Theme
-Plugin 'jacoborus/tender.vim'
-Plugin 'haishanh/night-owl.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'jacoborus/tender.vim'
+Plug 'haishanh/night-owl.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 " Git
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
-call vundle#end() 
+call plug#end()
+
+" COC config
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-pairs',
+  \ 'coc-tsserver',
+  \ 'coc-eslint',
+  \ 'coc-json',
+  \ ]
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <F2> <Plug>(coc-rename)
 
 "NERDTree
 let NERDTreeShowHidden=1
@@ -56,7 +71,7 @@ set shiftwidth=2    " Indents will have a width of 4
 
 set softtabstop=2   " Sets the number of columns for a TAB
 
-set expandtab 
+set expandtab
 
 set autoindent
 
