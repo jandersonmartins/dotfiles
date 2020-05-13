@@ -29,11 +29,7 @@ Plug 'vim-airline/vim-airline-themes'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-"these are making slow
 Plug 'Xuyuanp/nerdtree-git-plugin'
-"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-" should install nerdfont
-" Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -53,13 +49,6 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <F2> <Plug>(coc-rename)
 
-"NERDTree
-let NERDTreeShowHidden=1
-let NERDTreeIgnore = ['.swp$', '.DS_Store', '.git', 'node_modules']
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-nmap <C-b> :NERDTreeToggle<CR>
-
 "commenter
 inoremap jk <ESC>
 vmap <C-c> <plug>NERDCommenterToggle
@@ -68,6 +57,13 @@ nmap <C-c> <plug>NERDCommenterToggle
 " CtrlP
 " Ignore folders
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|vendor'
+
+"NERDTree
+let NERDTreeShowHidden=1
+let NERDTreeIgnore = ['.swp$', '.DS_Store', '.git', 'node_modules']
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+nmap <C-b> :NERDTreeToggle<CR>
 
 " sync open file with NERDTree
 " " Check if NERDTree is open or active
