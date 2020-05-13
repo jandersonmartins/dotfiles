@@ -29,9 +29,9 @@ Plug 'vim-airline/vim-airline-themes'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+"these are making slow
 Plug 'Xuyuanp/nerdtree-git-plugin'
-
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " should install nerdfont
 " Plug 'ryanoasis/vim-devicons'
 
