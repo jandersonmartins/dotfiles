@@ -21,11 +21,11 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'leafgarland/typescript-vim'
 Plug 'jparise/vim-graphql'
 " Theme
-Plug 'jacoborus/tender.vim'
 Plug 'haishanh/night-owl.vim'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'jacoborus/tender.vim'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -38,7 +38,6 @@ let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-pairs',
   \ 'coc-tsserver',
-  \ 'coc-eslint',
   \ 'coc-json',
   \ ]
 
@@ -84,12 +83,10 @@ endfunction
 autocmd BufEnter * call SyncTree()
 
 " Theme
-" colorscheme night-owl
-colorscheme gruvbox
-set bg=dark
+colorscheme tender
 
 "Airline Theme
-let g:airline_theme='minimalist'
+let g:airline_theme = 'tender'
 
 " General config
 let g:netrw_banner = 0
@@ -106,6 +103,8 @@ set softtabstop=2   " Sets the number of columns for a TAB
 set expandtab
 
 set autoindent
+
+set number
 
 syntax on
 syntax enable
