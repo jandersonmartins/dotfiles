@@ -1,14 +1,12 @@
 set nocompatible              " be iMproved, required
-set encoding=UTF-8
 filetype off                  " required
-filetype plugin on
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'wakatime/vim-wakatime'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -25,7 +23,6 @@ Plug 'haishanh/night-owl.vim'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'jacoborus/tender.vim'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -33,20 +30,12 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 call plug#end()
 
-" COC config
-let g:coc_global_extensions = [
-  \ 'coc-snippets',
-  \ 'coc-pairs',
-  \ 'coc-tsserver',
-  \ 'coc-json',
-  \ ]
-
 " Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <F2> <Plug>(coc-rename)
+"nmap <silent> gd <Plug>(coc-definition)
+"nmap <silent> gy <Plug>(coc-type-definition)
+"nmap <silent> gi <Plug>(coc-implementation)
+"nmap <silent> gr <Plug>(coc-references)
+"nmap <F2> <Plug>(coc-rename)
 
 "commenter
 inoremap jk <ESC>
@@ -83,28 +72,44 @@ endfunction
 autocmd BufEnter * call SyncTree()
 
 " Theme
-colorscheme tender
-
-"Airline Theme
-let g:airline_theme = 'tender'
+colorscheme night-owl
+set bg=dark
 
 " General config
 let g:netrw_banner = 0
 
-set tabstop=2       " The width of a TAB is set to 4.
-                    " Still it is a \t. It is just that
-                    " Vim will interpret it to be having
-                    " a width of 4.
+"------------Start Python PEP 8 stuff----------------
+" Number of spaces that a pre-existing tab is equal to.
+au BufRead,BufNewFile *py,*pyw,*.c,*.h set tabstop=4
 
-set shiftwidth=2    " Indents will have a width of 4
+"spaces for indents
+au BufRead,BufNewFile *.py,*pyw set shiftwidth=4
+au BufRead,BufNewFile *.py,*.pyw set expandtab
+au BufRead,BufNewFile *.py set softtabstop=4
 
-set softtabstop=2   " Sets the number of columns for a TAB
+" Use the below highlight group when displaying bad whitespace is desired.
+highlight BadWhitespace ctermbg=red guibg=red
+
+" Display tabs at the beginning of a line in Python mode as bad.
+au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
+" Make trailing whitespace be flagged as bad.
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+" Wrap text after a certain number of characters
+au BufRead,BufNewFile *.py,*.pyw, set textwidth=100
+
+" Use UNIX (\n) line endings.
+au BufNewFile *.py,*.pyw,*.c,*.h set fileformat=unix
+
+"------------Start html/css/js----------------
+au BufRead,BufNewFile *.js,*.html,*.css set shiftwidth=2
+au BufRead,BufNewFile *.js,*.html,*.css set expandtab
+au BufRead,BufNewFile *.js,*.html,*.css set softtabstop=2
 
 set expandtab
-
 set autoindent
-
 set number
+set noswapfile
 
 syntax on
 syntax enable
