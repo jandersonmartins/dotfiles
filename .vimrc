@@ -6,7 +6,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 call plug#begin('~/.vim/plugged')
 
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'wakatime/vim-wakatime'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -73,7 +72,7 @@ autocmd BufEnter * call SyncTree()
 
 " Theme
 colorscheme night-owl
-set bg=dark
+set background=dark
 
 " General config
 let g:netrw_banner = 0
@@ -102,9 +101,9 @@ au BufRead,BufNewFile *.py,*.pyw, set textwidth=100
 au BufNewFile *.py,*.pyw,*.c,*.h set fileformat=unix
 
 "------------Start html/css/js----------------
-au BufRead,BufNewFile *.js,*.html,*.css set shiftwidth=2
-au BufRead,BufNewFile *.js,*.html,*.css set expandtab
-au BufRead,BufNewFile *.js,*.html,*.css set softtabstop=2
+au BufRead,BufNewFile *.js,*.ts,*.html,*.css set shiftwidth=2
+au BufRead,BufNewFile *.js,*.ts,*.html,*.css set expandtab
+au BufRead,BufNewFile *.js,*.ts,*.html,*.css set softtabstop=2
 
 set expandtab
 set autoindent
