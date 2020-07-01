@@ -17,6 +17,7 @@ Plug 'jelera/vim-javascript-syntax'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'leafgarland/typescript-vim'
 Plug 'jparise/vim-graphql'
+Plug 'elixir-editors/vim-elixir'
 " Theme
 Plug 'haishanh/night-owl.vim'
 Plug 'morhetz/gruvbox'
@@ -72,7 +73,7 @@ autocmd BufEnter * call SyncTree()
 
 " Theme
 colorscheme night-owl
-set background=dark
+set bg=dark
 
 " General config
 let g:netrw_banner = 0
@@ -100,10 +101,10 @@ au BufRead,BufNewFile *.py,*.pyw, set textwidth=100
 " Use UNIX (\n) line endings.
 au BufNewFile *.py,*.pyw,*.c,*.h set fileformat=unix
 
-"------------Start html/css/js----------------
-au BufRead,BufNewFile *.js,*.ts,*.html,*.css set shiftwidth=2
-au BufRead,BufNewFile *.js,*.ts,*.html,*.css set expandtab
-au BufRead,BufNewFile *.js,*.ts,*.html,*.css set softtabstop=2
+"------------Start html/css/js/ex/exs----------------
+au BufRead,BufNewFile *.js,*.html,*.css,*.ex,*.exs set shiftwidth=2
+au BufRead,BufNewFile *.js,*.html,*.css,*.ex,*.exs set expandtab
+au BufRead,BufNewFile *.js,*.html,*.css,*.ex,*.exs set softtabstop=2
 
 set expandtab
 set autoindent
