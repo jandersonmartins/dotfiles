@@ -14,11 +14,8 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ekalinin/Dockerfile.vim'
 " Syntax highlight
-Plug 'jelera/vim-javascript-syntax'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-Plug 'leafgarland/typescript-vim'
-Plug 'jparise/vim-graphql'
-Plug 'elixir-editors/vim-elixir'
+"Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'sheerun/vim-polyglot'
 " Theme
 Plug 'haishanh/night-owl.vim'
 Plug 'morhetz/gruvbox'
@@ -37,6 +34,9 @@ call plug#end()
 "nmap <silent> gi <Plug>(coc-implementation)
 "nmap <silent> gr <Plug>(coc-references)
 "nmap <F2> <Plug>(coc-rename)
+
+"airline
+let g:airline_powerline_fonts = 1
 
 "commenter
 inoremap jk <ESC>
