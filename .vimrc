@@ -12,6 +12,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'preservim/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'scrooloose/nerdcommenter'
+Plug 'ekalinin/Dockerfile.vim'
 " Syntax highlight
 Plug 'jelera/vim-javascript-syntax'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
@@ -106,6 +107,7 @@ au BufRead,BufNewFile *.js,*.html,*.css,*.ex,*.exs set shiftwidth=2
 au BufRead,BufNewFile *.js,*.html,*.css,*.ex,*.exs set expandtab
 au BufRead,BufNewFile *.js,*.html,*.css,*.ex,*.exs set softtabstop=2
 
+set mouse=a
 set expandtab
 set autoindent
 set number
