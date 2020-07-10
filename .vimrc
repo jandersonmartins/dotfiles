@@ -19,6 +19,7 @@ Plug 'sheerun/vim-polyglot'
 " Theme
 Plug 'haishanh/night-owl.vim'
 Plug 'morhetz/gruvbox'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Git
@@ -36,7 +37,7 @@ call plug#end()
 "nmap <F2> <Plug>(coc-rename)
 
 "airline
-let g:airline_powerline_fonts = 1
+"let g:airline_powerline_fonts = 1
 
 "commenter
 inoremap jk <ESC>
@@ -73,8 +74,10 @@ endfunction
 autocmd BufEnter * call SyncTree()
 
 " Theme
-colorscheme night-owl
-set bg=dark
+set t_Co=256
+set cursorline
+colorscheme onehalflight
+let g:airline_theme='onehalfdark'
 
 " General config
 let g:netrw_banner = 0
